@@ -12,11 +12,17 @@ class Category
         $this->icon = $icon;
     }
 
+    /**
+     * Get the value of name
+     */
     public function getName()
     {
         return $this->name;
     }
 
+    /**
+     * Get the value of icon
+     */
     public function getIcon()
     {
         return $this->icon;

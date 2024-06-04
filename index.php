@@ -5,12 +5,12 @@ require_once __DIR__ . "/models/item.php";
 require_once __DIR__ . "/models/product.php";
 
 // Categorie
-$categoryDog = new Category("Cani", "ico_cane.png");
-$categoryCat = new Category("Gatti", "ico_gatto.png");
+$categoryDog = new Category("Cani", "fa-solid fa-dog");
+$categoryCat = new Category("Gatti", "fa-solid fa-cat");
 
 // Prodotti
-$product1 = new Product("Croccantini per cani", 9.99, "../img/img_croccantiniCane.png", $categoryDog, "Cibo");
-$product2 = new Product("Croccantini per gatti", 9.99, "../img/img_croccantiniGatto.png", $categoryCat, "Cibo");
+$dogFood = new Product("Croccantini per cani", 9.99, "./img/img_croccantiniCane.png", $categoryDog, "Cibo");
+$catFood = new Product("Croccantini per gatti", 9.99, "./img/img_croccantiniGatto.png", $categoryCat, "Cibo");
 
 ?>
 
@@ -25,6 +25,10 @@ $product2 = new Product("Croccantini per gatti", 9.99, "../img/img_croccantiniGa
 
     <!-- BOOTSTRAP -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
@@ -45,15 +49,18 @@ $product2 = new Product("Croccantini per gatti", 9.99, "../img/img_croccantiniGa
     <body>
 
         <div class="container mt-5">
-
+            <div class=" d-flex align-items-center justify-content-center gap-3">
+                <h1 class="text-center"><?php echo $categoryDog->getName(); ?></h1>
+                <i class="<?php echo $categoryDog->getIcon(); ?>"></i>
+            </div>
             <div class="row">
 
                 <!-- Card 1 -->
                 <div class="col-md-4">
-                    <div class="card">
-                        <img src="" class="card-img-top" alt="immagine">
+                    <div class="card d-flex align-items-center justify-content-center">
+                        <img src="<?php echo $dogFood->getImage(); ?>" class="card-img-top w-50" alt="Croccantini Cane">
                         <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
+                            <h5 class="card-title"><?php echo $dogFood->getTitle(); ?></h5>
                             <p class="card-text">Descrizione</p>
                         </div>
                     </div>
@@ -61,10 +68,10 @@ $product2 = new Product("Croccantini per gatti", 9.99, "../img/img_croccantiniGa
 
                 <!-- Card 2 -->
                 <div class="col-md-4">
-                    <div class="card">
-                        <img src="" class="card-img-top" alt="immagine">
+                    <div class="card d-flex align-items-center justify-content-center">
+                        <img src="<?php echo $dogFood->getImage(); ?>" class="card-img-top w-50" alt="Croccantini Cane">
                         <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
+                            <h5 class="card-title"><?php echo $dogFood->getTitle(); ?></h5>
                             <p class="card-text">Descrizione</p>
                         </div>
                     </div>
@@ -72,10 +79,10 @@ $product2 = new Product("Croccantini per gatti", 9.99, "../img/img_croccantiniGa
 
                 <!-- Card 3 -->
                 <div class="col-md-4">
-                    <div class="card">
-                        <img src="" class="card-img-top" alt="immagine">
+                    <div class="card d-flex align-items-center justify-content-center">
+                        <img src="<?php echo $dogFood->getImage(); ?>" class="card-img-top w-50" alt="Croccantini Cane">
                         <div class="card-body">
-                            <h5 class="card-title">Titolo</h5>
+                            <h5 class="card-title"><?php echo $dogFood->getTitle(); ?></h5>
                             <p class="card-text">Descrizione</p>
                         </div>
                     </div>
@@ -83,6 +90,11 @@ $product2 = new Product("Croccantini per gatti", 9.99, "../img/img_croccantiniGa
             </div>
 
             <div class="row mt-5">
+
+                <div class=" d-flex align-items-center justify-content-center gap-3">
+                    <h1 class="text-center"><?php echo $categoryCat->getName(); ?></h1>
+                    <i class="<?php echo $categoryCat->getIcon(); ?>"></i>
+                </div>
 
                 <!-- Card 1 -->
                 <div class="col-md-4">

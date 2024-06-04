@@ -12,16 +12,26 @@ class Item
         $this->image = $image;
     }
 
+
+    /**
+     * Get the value of title
+     */
     public function getTitle()
     {
         return $this->title;
     }
 
+    /**
+     * Get the value of price
+     */
     public function getPrice()
     {
         return $this->price;
     }
 
+    /**
+     * Get the value of image
+     */
     public function getImage()
     {
         return $this->image;
